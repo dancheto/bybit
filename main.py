@@ -8,17 +8,15 @@ from discord.ext import commands
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.preprocessing import StandardScaler
 from pybit.unified_trading import HTTP
+import os
 
-# Discord Bot Configuration
-DISCORD_BOT_TOKEN = os.getenv("ТОКЕНЪТ_НА_ДИСКОРД_БОТА")
-DISCORD_WEBHOOK_URL = os.getenv("ТВОЯТ_DISCORD_WEBHOOK")
+BYBIT_API_KEY = os.getenv("BYBIT_API_KEY")
+BYBIT_API_SECRET = os.getenv("BYBIT_API_SECRET")
+DISCORD_BOT_TOKEN = os.getenv("DISCORD_BOT_TOKEN")
+DISCORD_WEBHOOK_URL = os.getenv("DISCORD_WEBHOOK_URL")
+
 COMMAND_PREFIX = "!"
-
 bot = commands.Bot(command_prefix=COMMAND_PREFIX, intents=discord.Intents.default())
-
-# Bybit API Configuration
-BYBIT_API_KEY = os.getenv("ТОКЕНЪТ_НА_BYBIT")
-BYBIT_API_SECRET = os.getenv("ТАЙНИЯТ_КЛЮЧ_НА_BYBIT")
 TESTNET = False  # True ако тестваш на testnet, False за реален акаунт
 
 session = HTTP(
